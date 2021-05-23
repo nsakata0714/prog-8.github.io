@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: "Hiragino Kaku Gothic ProN";
@@ -8,14 +12,14 @@ a {
 }
 
 .container {
-  width: 1170px;
+  width: 100%;
   padding: 0 15px;
   margin: 0 auto;
 }
 
 .top-wrapper {
   padding: 180px 0 100px 0;
-  background-image: url(https://prog-8.com/images/html/advanced/top.png);
+  background-image: url(top.png);
   background-size: cover;
   color: white;
   text-align: center;
@@ -29,14 +33,16 @@ a {
 
 .top-wrapper p {
   opacity: 0.7;
+  font-size: 16px;
+  margin-bottom: 40px;
 }
 
 .btn-wrapper {
-  margin: 20px 0;
+  text-align: center;
 }
 
 .btn-wrapper p {
-  margin: 10px 0;
+  margin-bottom: 20px;
 }
 
 .signup {
@@ -58,6 +64,7 @@ a {
   display: inline-block;
   opacity: 0.8;
   border-radius: 4px;
+  text-align: center;
 }
 
 .btn:hover {
@@ -71,7 +78,10 @@ a {
 header {
   height: 65px;
   width: 100%;
-  background-color: rgba(34, 49, 52, 0.9);
+  background-color: rgba(34,49,52,0.9);
+  position :fixed;
+  top: 0;
+  z-index: 10;
 }
 
 .logo {
@@ -85,12 +95,7 @@ header {
 
 .header-right {
   float: right;
-  background-color: rgba(255, 255, 255, 0.3);
-  transition: all 0.5s;
-}
-
-.header-right:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+  margin-right: -25px;
 }
 
 .header-right a {
@@ -98,18 +103,26 @@ header {
   padding: 0 25px;
   color: white;
   display: block;
+  float: left;
+  transition: all 0.5s;
+}
+
+.header-right a:hover {
+  background-color: rgba(255,255,255,0.3);
 }
 
 .lesson-wrapper {
-  height: 500px;
+  height: 580px;
   padding-bottom: 80px;
+  padding-left: 5%;
+  padding-right: 5%;
   background-color: #f7f7f7;
   text-align: center;
 }
 
 .heading {
-  padding-top: 60px;
-  padding-bottom: 30px;
+  padding-top: 80px;
+  padding-bottom: 50px;
   color: #5f5d60;
 }
 
@@ -128,16 +141,16 @@ header {
 
 .lesson-icon p {
   position: absolute;
-  top: 90px;
+  top: 37%;
   width: 100%;
   color: white;
 }
 
-.txt-contents {
+.text-contents {
   width: 80%;
   display: inline-block;
-  margin-top: 20px;
-  font-size: 12px;
+  margin-top: 15px;
+  font-size: 13px;
   color: #b3aeb5;
 }
 
@@ -155,14 +168,106 @@ header {
   padding: 15px 40px;
   background-color: #5dca88;
   cursor: pointer;
-  box-shadow: 0 7px #1a7940;
+  box-shadow: 0px 7px #1a7940;
 }
 
-/* messageクラスがクリックされているときのCSSを指定してください */
 .message:active {
-  box-shadow: none;
   position: relative;
   top: 7px;
+  box-shadow: none;
+}
+
+footer img {
+  width: 125px;
+}
+
+footer p {
+  color: #b3aeb5;
+  font-size: 12px;
+}
+
+footer {
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.menu-icon {
+  color: white;
+  float: right;
+  font-size: 25px;
+  padding: 21px 0;
+  display: none;
+}
+
+.clear {
+  clear: left;
+}
+
+@media all and (max-width: 1000px) {
+  .lesson {
+    width: 50%;
+    margin-bottom: 50px;
+  }
+
+  .lesson-wrapper {
+    height: 990px;
+  }
+
+  footer {
+    text-align: center;
+  }
+}
+
+@media all and (max-width: 750px) {
+  .top-wrapper h1 {
+    font-size: 32px;
+  }
+
+  .heading h2 {
+    font-size: 20px;
+  }
+}
+
+@media all and (max-width: 670px) {
+  .header-right {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .top-wrapper .btn {
+    width: 100%;
+  }
+
+  .twitter {
+    margin-top: 10px;
+  }
+
+  .top-wrapper {
+    text-align: left;
+  }
+
+  .top-wrapper h1 {
+    font-size: 24px;
+  }
+
+  .top-wrapper p {
+    font-size: 14px;
+  }
+
+  .lesson {
+    width: 100%;
+  }
+
+  .lesson-wrapper {
+    height: 1700px;
+  }
+
+  .message-wrapper .btn {
+    width: 100%;
+  }
 }
 
 
